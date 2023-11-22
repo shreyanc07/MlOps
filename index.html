@@ -1,0 +1,25 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLOps Dashboard</title>
+</head>
+<body>
+    <h1>MLOps Dashboard</h1>
+
+    <form method="POST" action="{{ url_for('train_and_save') }}">
+        <label for="version">Model Version:</label>
+        <input type="number" name="version" required>
+        <button type="submit">Train and Save</button>
+    </form>
+
+    <form method="POST" action="{{ url_for('rollback') }}">
+        <label for="version">Rollback to Version:</label>
+        <input type="number" name="version" required>
+        <button type="submit">Rollback</button>
+    </form>
+</body>
+</html>
